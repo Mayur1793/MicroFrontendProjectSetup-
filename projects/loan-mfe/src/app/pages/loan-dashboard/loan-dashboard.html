@@ -1,0 +1,78 @@
+<div class="container-fluid py-2">
+  <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+      <p class="small fw-bold text-uppercase text-secondary mb-1">Loan management</p>
+      <h1 class="h3 fw-bold mb-1">Loan overview</h1>
+      <p class="text-secondary mb-0">Here’s what’s happening with your loan portfolio today.</p>
+    </div>
+    <a class="btn btn-primary" routerLink="/loans/loan-list">View applications <span aria-hidden="true">→</span></a>
+  </header>
+
+  <section class="row g-3 mb-3" aria-label="Loan portfolio summary">
+    <div class="col-12 col-sm-6 col-xl-3"><article class="card h-100"><div class="card-body">
+      <p class="small text-secondary mb-2">Applications</p><strong class="h3 d-block mb-2">1,284</strong><span class="small text-success fw-semibold">↗ 12.8%</span> <span class="small text-secondary">vs. last month</span>
+    </div></article></div>
+    <div class="col-12 col-sm-6 col-xl-3"><article class="card h-100"><div class="card-body">
+      <p class="small text-secondary mb-2">Amount disbursed</p><strong class="h3 d-block mb-2">$2.84M</strong><span class="small text-success fw-semibold">↗ 8.2%</span> <span class="small text-secondary">vs. last month</span>
+    </div></article></div>
+    <div class="col-12 col-sm-6 col-xl-3"><article class="card h-100"><div class="card-body">
+      <p class="small text-secondary mb-2">Awaiting review</p><strong class="h3 d-block mb-2">36</strong><span class="small text-warning fw-semibold">Needs attention</span>
+    </div></article></div>
+    <div class="col-12 col-sm-6 col-xl-3"><article class="card h-100"><div class="card-body">
+      <p class="small text-secondary mb-2">Approval rate</p><strong class="h3 d-block mb-2">78.4%</strong><span class="small text-success fw-semibold">↗ 3.1%</span> <span class="small text-secondary">vs. last month</span>
+    </div></article></div>
+  </section>
+
+  <section class="row g-3 mb-3">
+    <div class="col-12 col-xl-8">
+      <article class="card h-100"><div class="card-body">
+        <div class="d-flex justify-content-between align-items-start gap-2">
+          <div><h2 class="h6 fw-bold mb-1">Application activity</h2><p class="small text-secondary mb-0">Applications received over the last 6 months</p></div>
+          <span class="badge text-bg-light border">Last 6 months</span>
+        </div>
+        <div class="chart mt-4" role="img" aria-label="Applications rose from 48 in May to 88 in October">
+          <div class="chart-guides"><span>100</span><span>75</span><span>50</span><span>25</span></div>
+          <div class="bar-list">
+            @for (month of monthlyApplications; track month.month) {
+              <div class="bar-column"><div class="small text-secondary">{{ month.value }}</div><div class="bar-track"><div class="bar" [style.height]="month.height"></div></div><span class="small text-secondary">{{ month.month }}</span></div>
+            }
+          </div>
+        </div>
+      </div></article>
+    </div>
+    <div class="col-12 col-xl-4">
+      <article class="card h-100"><div class="card-body">
+        <h2 class="h6 fw-bold mb-1">Loan portfolio</h2><p class="small text-secondary">Active accounts by product</p>
+        <div class="d-flex align-items-baseline gap-2 mt-4"><strong class="h3 mb-0">2,846</strong><span class="small text-secondary">active accounts</span></div>
+        <div class="portfolio-bar my-3" aria-label="Portfolio by loan product"><span class="home-segment"></span><span class="personal-segment"></span><span class="auto-segment"></span><span class="business-segment"></span></div>
+        <ul class="list-unstyled d-grid gap-2 mb-0 small">
+          <li class="d-flex align-items-center gap-2"><i class="legend-dot home-dot"></i><span>Home loans</span><strong class="ms-auto">48%</strong></li>
+          <li class="d-flex align-items-center gap-2"><i class="legend-dot personal-dot"></i><span>Personal loans</span><strong class="ms-auto">27%</strong></li>
+          <li class="d-flex align-items-center gap-2"><i class="legend-dot auto-dot"></i><span>Auto loans</span><strong class="ms-auto">17%</strong></li>
+          <li class="d-flex align-items-center gap-2"><i class="legend-dot business-dot"></i><span>Business loans</span><strong class="ms-auto">8%</strong></li>
+        </ul>
+      </div></article>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-body pb-0 d-flex justify-content-between align-items-start gap-2">
+      <div><h2 class="h6 fw-bold mb-1">Recent applications</h2><p class="small text-secondary mb-0">Latest updates from your applicants</p></div>
+      <a class="link-primary small fw-semibold text-nowrap" routerLink="/loans/loan-list">View all →</a>
+    </div>
+    <div class="table-responsive p-3">
+      <table class="table table-hover align-middle mb-0">
+        <thead><tr><th>Applicant</th><th>Loan type</th><th>Amount</th><th>Status</th></tr></thead>
+        <tbody>
+          @for (application of recentApplications; track application.applicant) {
+            <tr>
+              <td><span class="d-inline-flex align-items-center gap-2"><span class="avatar rounded-circle">{{ application.initials }}</span><strong>{{ application.applicant }}</strong></span></td>
+              <td>{{ application.type }}</td><td class="fw-semibold">{{ application.amount }}</td>
+              <td><span class="badge rounded-pill" [class]="application.statusClass">{{ application.status }}</span></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

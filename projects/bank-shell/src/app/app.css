@@ -1,0 +1,259 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #17243b;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  height: 72px;
+  align-items: center;
+  gap: 48px;
+  padding: 0 32px;
+  background: #10233f;
+  color: #fff;
+  box-shadow: 0 2px 12px rgb(16 35 63 / 15%);
+}
+
+.brand {
+  display: inline-flex;
+  flex: 0 0 220px;
+  align-items: center;
+  gap: 11px;
+  color: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #5b8def;
+  color: #fff;
+  font-size: 18px;
+}
+
+.project-nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-nav a {
+  position: relative;
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 18px;
+  color: #c5d0df;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.project-nav a:hover,
+.project-nav a.active {
+  background: rgb(255 255 255 / 7%);
+  color: #fff;
+}
+
+.project-nav a.active::after {
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  left: 18px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: #78a5ff;
+  content: '';
+}
+
+.topbar-label {
+  margin-left: auto;
+  color: #aab8ca;
+  font-size: 13px;
+}
+
+.workspace {
+  display: grid;
+  min-height: calc(100vh - 72px);
+  grid-template-columns: 252px minmax(0, 1fr);
+}
+
+.sidebar {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 72px);
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 16px 20px;
+  border-right: 1px solid #e6ebf2;
+  background: #fff;
+}
+
+.menu-section h2 {
+  margin: 0 12px 12px;
+  color: #8793a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.menu-section nav {
+  display: grid;
+  gap: 4px;
+}
+
+.menu-section a {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #536176;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.menu-section a:hover {
+  background: #f3f6fb;
+  color: #2459b3;
+}
+
+.menu-section a.active {
+  background: #edf3ff;
+  color: #2459b3;
+  font-weight: 650;
+}
+
+.menu-icon {
+  width: 18px;
+  color: #8290a4;
+  font-size: 16px;
+  text-align: center;
+}
+
+.menu-section a.active .menu-icon {
+  color: #4778ce;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 14px 10px 0;
+  border-top: 1px solid #edf0f5;
+  color: #7a8798;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #37b879;
+  box-shadow: 0 0 0 3px #e6f7ee;
+}
+
+.content {
+  min-width: 0;
+  padding: 32px;
+  background: #f5f7fb;
+}
+
+a:focus-visible {
+  outline: 3px solid #8bb2ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    padding: 0 18px;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    min-height: 64px;
+  }
+
+  .project-nav {
+    height: 52px;
+    order: 1;
+    width: 100%;
+  }
+
+  .project-nav a {
+    padding: 0 14px;
+  }
+
+  .project-nav a.active::after {
+    right: 14px;
+    left: 14px;
+  }
+
+  .topbar-label {
+    font-size: 12px;
+  }
+
+  .workspace {
+    min-height: calc(100vh - 116px);
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: 0;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid #e6ebf2;
+  }
+
+  .menu-section {
+    min-width: 190px;
+  }
+
+  .menu-section h2 {
+    margin-bottom: 7px;
+  }
+
+  .menu-section nav {
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .menu-section a {
+    min-height: 38px;
+    gap: 7px;
+    padding: 0 9px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+}

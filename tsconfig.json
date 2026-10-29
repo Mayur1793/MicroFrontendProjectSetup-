@@ -19,5 +19,25 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/bank-shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/bank-shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/loan-mfe/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/loan-mfe/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/insurance-mfe/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/insurance-mfe/tsconfig.spec.json"
+    }
+  ]
 }

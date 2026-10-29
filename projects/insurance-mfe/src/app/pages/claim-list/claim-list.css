@@ -1,0 +1,10 @@
+.search-input { max-width: 290px; }
+.avatar { display: inline-grid; width: 30px; height: 30px; place-items: center; background: #edf2fb; color: #5273ad; font-size: 10px; font-weight: 700; }
+.summary-dot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
+.blue-dot { background: #4a78cc; }
+.amber-dot { background: #e5a84e; }
+.green-dot { background: #56ae8b; }
+.review { background: #fff3d9; color: #805a12; }
+.approved { background: #dff4e8; color: #206b49; }
+.attention { background: #fde7e5; color: #963c34; }
+.declined { background: #e9ecef; color: #525960; }

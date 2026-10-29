@@ -1,0 +1,72 @@
+.chart {
+  display: flex;
+  height: 190px;
+}
+
+.chart-guides {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px 24px 0;
+  color: #9aa5b4;
+  font-size: 10px;
+}
+
+.bar-list {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  justify-content: space-around;
+  border-bottom: 1px solid #edf0f5;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 43px, #f0f3f7 44px, transparent 45px);
+}
+
+.bar-column {
+  display: flex;
+  width: 12%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.bar-track {
+  display: flex;
+  width: 24px;
+  height: 125px;
+  align-items: flex-end;
+  border-radius: 5px 5px 0 0;
+  background: #f0f4fb;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, #7ea5f0, #4778ce);
+}
+
+.portfolio-bar {
+  display: flex;
+  height: 9px;
+  gap: 3px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.portfolio-bar span {
+  border-radius: 8px;
+}
+
+.auto-segment { width: 38%; background: #4a78cc; }
+.home-segment { width: 29%; background: #8a72d0; }
+.health-segment { width: 21%; background: #e5a84e; }
+.life-segment { flex: 1; background: #56ae8b; }
+.legend-dot, .summary-dot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
+.auto-dot, .blue-dot { background: #4a78cc; }
+.home-dot { background: #8a72d0; }
+.health-dot, .amber-dot { background: #e5a84e; }
+.life-dot, .green-dot { background: #56ae8b; }
+.avatar { display: inline-grid; width: 30px; height: 30px; place-items: center; background: #edf2fb; color: #5273ad; font-size: 10px; font-weight: 700; }
+.review { background: #fff3d9; color: #805a12; }
+.approved { background: #dff4e8; color: #206b49; }
+.attention { background: #fde7e5; color: #963c34; }

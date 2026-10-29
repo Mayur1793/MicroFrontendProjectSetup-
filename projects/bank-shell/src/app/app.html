@@ -1,0 +1,86 @@
+<header class="topbar">
+  <a class="brand" routerLink="/loans" aria-label="Banking Portal home">
+    <span class="brand-mark" aria-hidden="true">B</span>
+    <span>Banking Portal</span>
+  </a>
+
+  <nav class="project-nav" aria-label="Projects">
+    <a
+      routerLink="/loans"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      Loans
+    </a>
+    <a
+      routerLink="/insurance"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      Insurance
+    </a>
+  </nav>
+
+  <div class="topbar-label">Customer services</div>
+</header>
+
+<div class="workspace">
+  <aside class="sidebar" aria-label="Project menus">
+    @if (activeProject() === 'loans') {
+      <section class="menu-section" aria-labelledby="loans-menu-heading">
+        <h2 id="loans-menu-heading">Loans</h2>
+        <nav aria-label="Loans menu">
+          <a
+            routerLink="/loans"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+          >
+            <span class="menu-icon" aria-hidden="true">▦</span>
+            Overview
+          </a>
+          <a
+            routerLink="/loans/loan-list"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+          >
+            <span class="menu-icon" aria-hidden="true">▤</span>
+            Loan applications
+          </a>
+        </nav>
+      </section>
+    } @else {
+      <section class="menu-section" aria-labelledby="insurance-menu-heading">
+        <h2 id="insurance-menu-heading">Insurance</h2>
+        <nav aria-label="Insurance menu">
+          <a
+            routerLink="/insurance"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+          >
+            <span class="menu-icon" aria-hidden="true">▦</span>
+            Overview
+          </a>
+          <a
+            routerLink="/insurance/claim-list"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+          >
+            <span class="menu-icon" aria-hidden="true">▤</span>
+            Claims
+          </a>
+        </nav>
+      </section>
+    }
+
+    <div class="sidebar-footer">
+      <span class="status-dot" aria-hidden="true"></span>
+      All systems operational
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
